@@ -1,9 +1,6 @@
 # Russian Conversion
 A program that transforms english typing into russian at runtime.
 
-## Requirements
-Uses the library of pynput, to convert the english typing into russian, and to track what is being typed. 
-
 ## Installation
 To install run the following command:
 ``` 
