@@ -1,0 +1,115 @@
+#!/usr/bin/env/python3
+
+# script to convert english letters into russian
+# maybe need dictionary words 
+# need some mapping as well
+# would be very cool if i made machine learning 
+from pynput.keyboard import Key, Controller, Listener
+from functools import reduce
+from russian_conversion_map import russian_conversion_map
+
+stream = []
+finished = False
+output = ""
+controller = Controller()
+position = 0
+
+def stream_to_string(stream: list) -> str:
+    return reduce(lambda a, b: a + b, stream)
+
+def convert_to_russian(stream: list) -> str:
+    stream_string = stream_to_string(stream)
+    if stream_string in russian_conversion_map:
+        return russian_conversion_map[stream_string]
+    russian = ""
+    for letter in stream:
+        russian += russian_conversion_map[letter]
+    return russian
+
+def on_press(key) -> None:
+    global stream
+    global finished
+    global output
+    global position
+
+    try:
+        print(key, position)
+
+        if key == Key.esc:
+            # end conversion
+            return False
+
+        elif key == Key.backspace:
+            stream = stream[:-1]
+            output = output[:-1]
+            if (position > 0):
+                position -= 1
+
+        elif key == Key.space:
+            if len(stream) == 0:
+                finished = False
+                positon = 0
+            else:
+                finished = True
+                position = 0
+
+        elif key == Key.down:
+            position = 0
+
+        elif key == Key.up:
+            position = len(stream) - 1
+
+        elif key == Key.left:
+            if (position > 0):
+                position -= 1
+        
+        elif key == Key.right:
+            if (position < len(stream)):
+                position += 1
+        elif str(key).replace("'", "") in russian_conversion_map.keys():
+            stream.insert(position, str(key).replace("'", ""))
+            position += 1
+            # output = convert_to_russian(stream)
+            # make stream process one input at a time
+            # NOTE: remember a stream does not have to be an individual character added
+
+    except AttributeError:
+        print('key pressed: {0}'.format(key))
+
+def on_release(key) -> None:   
+    global controller
+    global stream
+    global finished
+    global output
+    global position
+
+    try:
+        output = convert_to_russian(stream_to_string(stream))
+    except:
+        print("failed")
+
+    print(stream, type(stream))
+    print(output)
+    
+    if finished:
+        for _ in range(len(stream)+1):
+            controller.press(Key.backspace)
+            controller.release(Key.backspace)
+        for letter in output:
+            controller.press(letter)
+            controller.release(letter)
+        controller.press(" ")
+        controller.release(" ")
+        stream = []
+        output = ""
+        position = 0
+        finished = False
+
+    if key == Key.esc:
+        # Stop listener
+        return False   
+
+with Listener(
+        on_press=on_press,
+        on_release=on_release) as listener:
+    listener.join()
