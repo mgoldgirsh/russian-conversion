@@ -9,10 +9,19 @@ To install run the following command:  <br>
 ``` pip3 install -r requirements.txt ``` 
 
 ## Usage
+Clone the repo through ssh or html, with 
+``` 
+git clone git@github.com:mgoldgirsh/russian-conversion.git
+```
+
 To use run the script with the following
-``` ./russian_conversion_script ```   <br>
+``` 
+./russian_conversion_script 
+```   
 or run the following your terminal window
-``` python3 russian_conversion_process ```
+``` 
+python3 russian_conversion_process 
+```
 
 ## Things to Add (WIP Project)
 - Add machine learning so words would autocorrect (complicated)
