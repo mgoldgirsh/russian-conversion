@@ -48,8 +48,8 @@ or run the following your terminal window
 python3 russian_conversion_process 
 ```
 <br>
-Once the process is running you can start typing in English and then click the spacebar to transform the text into Russian.
-To exit the process click the esc key on your keyboard. 
+Once the process is running you can start typing in English and then click the **spacebar** to transform the text into Russian.
+To exit the process click the **esc** key on your keyboard. 
 
 ## Things to Add (WIP Project)
 - Add machine learning so words would autocorrect (complicated)
