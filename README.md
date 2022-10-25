@@ -4,7 +4,6 @@ A program that transforms English type into Russian type at runtime.   <br>
 Examples.
 
 privet -> привет
-ludi -> луди 
 kak delа u tebe -> как дела у тебе
 ```
 
