@@ -5,7 +5,7 @@ A program that transforms english typing into russian at runtime.
 Uses the library of pynput, to convert the english typing into russian, and to track what is being typed. 
 
 ## Installation
-To install run the following command: 
+To install run the following command:  <br>
 ``` pip3 install -r requirements.txt ``` 
 
 ## Usage
