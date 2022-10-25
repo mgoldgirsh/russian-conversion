@@ -1,8 +1,31 @@
 # Russian Conversion
-A program that transforms english typing into russian at runtime.
+A program that transforms English type into Russian type at runtime.
+Examples.
+```
+privet -> привет
+ludi -> луди 
+kak delа u tebe -> как дела у тебе
+```
 
 ## Installation
-To install run the following command:
+First install python3 (recommended version python3.8):
+
+On Linux:
+```
+sudo apt install python3.8 python3.8-pip
+```
+
+On Mac:
+```
+brew install python3.8
+brew install python3.8-pip
+```
+
+On Windows:
+Navigate to the python website and install from there.    <br>
+```https://www.python.org/downloads/```
+
+To install the requirements run the following command:
 ``` 
 pip3 install -r requirements.txt 
 ``` 
@@ -23,6 +46,9 @@ or run the following your terminal window
 ``` 
 python3 russian_conversion_process 
 ```
+
+Once the process is running you can start typing in English and then click the <spacebar> to transform the text into Russian.
+To exit the process click the <esc> key on your keyboard. 
 
 ## Things to Add (WIP Project)
 - Add machine learning so words would autocorrect (complicated)
