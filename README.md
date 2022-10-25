@@ -5,17 +5,21 @@ A program that transforms english typing into russian at runtime.
 Uses the library of pynput, to convert the english typing into russian, and to track what is being typed. 
 
 ## Installation
-To install run the following command:  <br>
-``` pip3 install -r requirements.txt ``` 
+To install run the following command:
+``` 
+pip3 install -r requirements.txt 
+``` 
 
 ## Usage
-Clone the repo through ssh or html, with 
+Clone the repo through ssh or html and cd into the directory with 
 ``` 
 git clone git@github.com:mgoldgirsh/russian-conversion.git
+cd russian-coversion
 ```
 
-To use run the script with the following
+Then to use, run the script with the following
 ``` 
+chmod +x russian_conversion_script
 ./russian_conversion_script 
 ```   
 or run the following your terminal window
