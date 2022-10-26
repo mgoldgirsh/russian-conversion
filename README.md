@@ -5,6 +5,7 @@ Translates English into Russian through layer translating.    <br>
 Examples.
 
 privet -> привет
+ljudi -> люди
 kak delа u tebe -> как дела у тебе
 ```
 
