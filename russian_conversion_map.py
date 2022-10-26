@@ -1,3 +1,4 @@
+# mapping of english letters to their russian counterparts
 russian_conversion_map = {
     "a" : "а",
     "b" : "б",
@@ -32,3 +33,6 @@ russian_conversion_map = {
     "sh": "ш",
     "sch": "щ",
 }
+
+# the maximum value of how many english characters go to one russian letter
+max_layer = 3

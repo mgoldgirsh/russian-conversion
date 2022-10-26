@@ -44,7 +44,7 @@ chmod +x russian_conversion_script
 ```   
 or run the following your terminal window
 ``` 
-python3 russian_conversion_process 
+python3 russian_conversion_controller
 ```
 <br>
 Once the process is running you can start typing in English and then click the __spacebar__ key to transform the text into Russian.

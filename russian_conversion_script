@@ -1,2 +1,2 @@
 #!/usr/bin/bash
-python3 russian_conversion_process
+python3 russian_conversion_controller
