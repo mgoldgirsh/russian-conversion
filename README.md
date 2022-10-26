@@ -53,6 +53,4 @@ To exit the process click the __esc__ key on your keyboard.
 
 ## Things to Add (WIP Project)
 - Add machine learning so words would autocorrect (complicated)
-- Add better conversion so that russian characters are easier to acces
-    - specifically characters that map to "sh" or "sch" that are more than one character
 - Add tab autocomplete so it knows what character to go to 
