@@ -1,5 +1,6 @@
 # Russian Conversion
-A program that transforms English type into Russian type at runtime.   <br>
+A program that transforms English type into Russian type at runtime.    <br>
+Translates English into Russian through layer translating.    <br>
 ```
 Examples.
 
