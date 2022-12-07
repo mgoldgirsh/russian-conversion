@@ -5,7 +5,7 @@ from language.valid_words import ValidWordList
 
 if __name__ == "__main__":
     valid_words = None
-    path = "language/russian_words.txt"
+    path = "~/VSCode/scripts/russian-conversion/language/russian_words.txt"
     
     valid_words = ValidWordList(path)
     
