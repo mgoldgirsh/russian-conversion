@@ -27,7 +27,7 @@ brew install python3.8
 brew install python3.8-pip
 ```
 
-On Windows:
+On Windows:   <br>
 Navigate to the python website and install from there.    <br>
 ```https://www.python.org/downloads/```
 
