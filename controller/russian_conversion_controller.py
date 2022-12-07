@@ -2,9 +2,9 @@
 
 # script to convert english letters into russian
 from pynput.keyboard import Key, Controller, Listener
-from functools import reduce
-from russian_conversion_map import russian_conversion_map, max_layer
-from russian_conversion_model import translate, stream_to_string
+from language.russian_conversion_map import russian_conversion_map, max_layer
+from language.valid_words import ValidWordList
+from model.russian_conversion_model import translate, spellcheck
 
 # initialize global variables
 stream = []
@@ -13,8 +13,8 @@ output = ""
 controller = Controller()
 position = 0
 
-# callback function fro pressing a key on the keyboard
-def on_press(key) -> None:
+# callback function for pressing a key on the keyboard
+def on_press(key, valid_words: ValidWordList = None) -> None:
     global stream
     global finished
     global output
@@ -66,8 +66,8 @@ def on_press(key) -> None:
                 position += 1
 
         # if the key pressed in the map of keys then we can insert it into the stream
-        elif str(key).replace("'", "") in russian_conversion_map.keys():
-            stream.insert(position, str(key).replace("'", ""))
+        elif str(key).replace("'", "").lower() in russian_conversion_map.keys():
+            stream.insert(position, str(key).replace("'", "").lower())
             position += 1
             # output = convert_to_russian(stream)
             # make stream process one input at a time
@@ -78,7 +78,7 @@ def on_press(key) -> None:
 
 
 # callback function when the key is released from the keyboard
-def on_release(key) -> None:   
+def on_release(key, valid_words: ValidWordList = None) -> None:   
     global controller
     global stream
     global finished
@@ -99,7 +99,10 @@ def on_release(key) -> None:
         for _ in range(len(stream)+1):
             controller.press(Key.backspace)
             controller.release(Key.backspace)
-
+        
+        if valid_words is not None:
+            output = spellcheck(output=output, valid_words=valid_words)
+        
         # output the translated letters in the output
         for letter in output:
             controller.press(letter)
@@ -119,10 +122,3 @@ def on_release(key) -> None:
     if key == Key.esc:
         # Stop listener
         return False   
-
-
-# initializes the listener so that it can translate letters
-with Listener(
-        on_press=on_press,
-        on_release=on_release) as listener:
-    listener.join()

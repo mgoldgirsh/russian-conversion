@@ -36,7 +36,8 @@ russian_conversion_map = {
     "sh": "ш",
     "sch": "щ",
     "shh" : "щ",
-    "#" : "ъ"
+    "#" : "ъ",
+    '"' : "ь" 
 }
 
 # the maximum value of how many english characters go to one russian letter
