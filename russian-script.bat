@@ -1,0 +1,1 @@
+python C:\Users\ilike\OneDrive\Desktop\coding\russian-conversion\main.py --path C:\Users\ilike\OneDrive\Desktop\coding\russian-conversion\language\russian_words.txt
