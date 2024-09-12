@@ -8,6 +8,7 @@ privet -> привет
 ljudi -> люди
 kak delа u tebe -> как дела у тебе
 ```
+![russian-conversion example](russian-conversion.gif)
 
 ## Features
 - conversion from english --> russian (or any language you map)
